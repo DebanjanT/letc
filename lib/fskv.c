@@ -1,7 +1,7 @@
 //
 //   * This file is a part of letc
 //   * fskv.c created by Debanjan Tewary on 10/27/2024
-//   * Copyright © 2024  DTDigital. All rights reserved.
+//   * Copyright © 2024 DTDigital. All rights reserved.
 //
 //   letc is free software: you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as published by

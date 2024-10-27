@@ -1,4 +1,4 @@
-#include "mmkv.h"
+#include "../include/mmkv.h"
 #include "stdio.h"
 #include "string.h"
 

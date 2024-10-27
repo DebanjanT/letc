@@ -1,14 +1,33 @@
-#include "../include/mmkv.h"
+//
+//   * This file is a part of letc
+//   * fskv.c created by Debanjan Tewary on 10/27/2024
+//   * Copyright © 2024  DTDigital. All rights reserved.
+//
+//   letc is free software: you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, either version 3 of the License, or
+//   (at your option) any later version.
+//
+//   letc is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU General Public License for more details.
+//
+//   You should have received a copy of the GNU General Public License
+//   along with letc.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+#include "../include/fskv/fskv.h"
 #include "stdio.h"
 #include "string.h"
 
 // Init KV Store
-KeyValuePair kvStore[MAX_ALLOWED_PAIRS];
+FsKeyValuePair kvStore[MAX_ALLOWED_PAIRS];
 // Number of kv-pair stored in memory
 // TODO - this value needs to te fetched from a local sqlite database
 int pairCount = 0;
 
-int mmkv_set(const char *key, const char *value) {
+int fskv_set(const char *key, const char *value) {
   //   printf("[+] Key is %s\n", key);
   //   printf("[+] Value is %s\n", value);
   //   printf("[+] Length of Key is %lu\n", strlen(key));
@@ -52,7 +71,7 @@ int mmkv_set(const char *key, const char *value) {
   return 1; // Failure
 }
 
-const char *mmkv_get(const char *key) {
+const char *fskv_get(const char *key) {
   //   printf("Searching for key: %s\n", key);
 
   // Segfault Error Prevention
@@ -72,7 +91,7 @@ const char *mmkv_get(const char *key) {
 }
 
 // Print the full key-value store
-void mmkv_print() {
+void fskv_print() {
   printf("Key-Value Store\n");
   for (int i = 0; i < pairCount; i++) {
     printf(" 🔑 Key: %s, 📈 Value: %s\n", kvStore[i].key, kvStore[i].value);
